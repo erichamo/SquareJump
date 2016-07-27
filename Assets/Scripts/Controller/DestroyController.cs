@@ -3,8 +3,9 @@ using System.Collections;
 
 public class DestroyController : MonoBehaviour {
 
-	void OnCollisionEnter2D(Collision2D otherObj) {
+	void OnCollisionEnter2D(Collision2D otherObj)
+	{
 		Destroy(otherObj.gameObject);
-		print("DESTROY "+otherObj.gameObject);
+		print("YOU LOSE "+otherObj.gameObject);
 	}
 }

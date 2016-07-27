@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Controller\MusicManager.cs" />
      <Compile Include="Assets\Scripts\Controller\SquareController.cs" />
      <Compile Include="Assets\Scripts\Game\FollowSquare.cs" />
+     <Compile Include="Assets\Scripts\Game\Lose.cs" />
      <Compile Include="Assets\Scripts\General\AspectUtility.cs" />
      <Compile Include="Assets\Scripts\General\ChangeTexture.cs" />
      <Compile Include="Assets\Scripts\General\LevelData.cs" />
