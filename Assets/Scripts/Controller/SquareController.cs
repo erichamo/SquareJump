@@ -4,17 +4,15 @@ using System.Collections;
 public class SquareController : MonoBehaviour {
 	
 	//public Animator squareRotate;
-	public float speed;
-	public float jump;
+	public float speed = 8;
+	public float jump = 15;
+	public bool doubleJump;
 	public bool isGround;
-	public bool inMovement;
-	public bool initGo;
 
 	void Start()
 	{
 		this.isGround = false;
-		this.inMovement = false;
-		this.initGo = false;
+		this.doubleJump = false;
 	}
 
 	void FixedUpdate()
@@ -22,18 +20,24 @@ public class SquareController : MonoBehaviour {
 		/*this.transform.position = new Vector3(this.transform.localPosition.x+this.speed/50,
 	    	   	                              this.transform.localPosition.y,
 	       		                              this.transform.localPosition.z);*/
-		this.transform.position += this.transform.right * speed * Time.deltaTime;
+		this.transform.position += this.transform.right * this.speed * Time.deltaTime;
 	}
 
 	void Update()
 	{
-		if(this.isGround &&
-		   Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(0))
 		{
-			/*this.GetComponent<Rigidbody2D>().velocity = new Vector3(this.speed/50,
-			                                                        this.jump, 0);*/
-			this.GetComponent<Rigidbody2D>().AddForce(transform.up * this.jump * 50);
-			this.isGround = false;
+			if(this.isGround)
+			{
+				this.GetComponent<Rigidbody2D>().AddForce(this.transform.up * this.jump * 50);
+				this.isGround = false;
+				this.doubleJump = true;
+			}
+			else if(this.doubleJump)
+			{
+				this.GetComponent<Rigidbody2D>().AddForce(this.transform.up * this.jump * 50);
+				this.doubleJump = false;
+			}
 		}
 		/*if(!this.isGround)
 		{
@@ -47,6 +51,11 @@ public class SquareController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D colision)
 	{
-		isGround = colision.gameObject.tag == "ground";
+		this.isGround = colision.gameObject.tag == "ground";
+
+		if(colision.gameObject.tag == "ground")
+		{
+			this.doubleJump = false;
+		}
 	}
 }

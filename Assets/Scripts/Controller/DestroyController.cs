@@ -6,6 +6,6 @@ public class DestroyController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D otherObj)
 	{
 		Destroy(otherObj.gameObject);
-		print("YOU LOSE "+otherObj.gameObject);
+		//print("YOU LOSE "+otherObj.gameObject);
 	}
 }

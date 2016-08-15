@@ -46,6 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ProgressBar\Script\ProgressBarBehaviour.cs" />
+     <Compile Include="Assets\ProgressBar\Script\ProgressRadialBehaviour.cs" />
+     <Compile Include="Assets\ProgressBar\Script\Utils.cs" />
+     <Compile Include="Assets\Scripts\Controller\DataController.cs" />
      <Compile Include="Assets\Scripts\Controller\DestroyController.cs" />
      <Compile Include="Assets\Scripts\Controller\GameController.cs" />
      <Compile Include="Assets\Scripts\Controller\MusicManager.cs" />
@@ -57,6 +61,7 @@
      <Compile Include="Assets\Scripts\General\LevelData.cs" />
      <Compile Include="Assets\Scripts\General\OpenURL.cs" />
      <Compile Include="Assets\Scripts\General\Salir.cs" />
+     <Compile Include="Assets\Scripts\PreLoader.cs" />
      <None Include="Assets\Musics\music.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
