@@ -12,7 +12,6 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		LevelData = "scene";
 		ScoreData = "score";
-		CurrentLevel = Application.loadedLevel;
 		CurrentScore = 0;
 	}
 
@@ -24,7 +23,7 @@ public class GameController : MonoBehaviour {
 
 	public static void LoseScene()
 	{
-		Application.LoadLevel(CurrentLevel);
+		Application.LoadLevel(Application.loadedLevel);
 	}
 
 	public static void SetBonus(int iBonus)
